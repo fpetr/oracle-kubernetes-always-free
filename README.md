@@ -68,7 +68,7 @@ terraform destroy
 | <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | User OCID | `string` | n/a | yes |
 | <a name="input_user_private_key_fingerprint"></a> [user\_private\_key\_fingerprint](#input\_user\_private\_key\_fingerprint) | Fingerprint of user's key | `string` | n/a | yes |
 | <a name="input_user_private_key_path"></a> [user\_private\_key\_path](#input\_user\_private\_key\_path) | Path to user's private key file | `string` | n/a | yes |
-| <a name="input_worker_pools"></a> [worker\_pools](#input\_worker\_pools) | Worker nodes configuration | `map(any)` | <pre>{<br>  "oke-vm-standard-ol8": {<br>    "description": "OKE-managed Node Pool with OKE Oracle Linux 8 image",<br>    "memory": 8,<br>    "ocpus": 2,<br>    "os": "Oracle Linux",<br>    "os_version": "8",<br>    "shape": "VM.Standard.A1.Flex",<br>    "size": 2<br>  }<br>}</pre> | no |
+| <a name="input_worker_pools"></a> [worker\_pools](#input\_worker\_pools) | Worker nodes configuration | `map(any)` | <pre>{<br>  "oke-vm-standard-ol8": {<br>    "boot_volume_size": 100,<br>    "description": "OKE-managed Node Pool with OKE Oracle Linux 8 image",<br>    "memory": 8,<br>    "ocpus": 2,<br>    "os": "Oracle Linux",<br>    "os_version": "8",<br>    "shape": "VM.Standard.A1.Flex",<br>    "size": 2<br>  }<br>}</pre> | no |
 
 ## Outputs
 

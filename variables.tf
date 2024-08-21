@@ -53,13 +53,14 @@ variable "worker_pools" {
   type        = map(any)
   default = {
     oke-vm-standard-ol8 = {
-      description = "OKE-managed Node Pool with OKE Oracle Linux 8 image",
-      size        = 2,
-      os          = "Oracle Linux",
-      os_version  = "8",
-      shape       = "VM.Standard.A1.Flex",
-      ocpus       = 2,
-      memory      = 8,
+      description      = "OKE-managed Node Pool with OKE Oracle Linux 8 image",
+      size             = 2,
+      os               = "Oracle Linux",
+      os_version       = "8",
+      shape            = "VM.Standard.A1.Flex",
+      ocpus            = 2,
+      memory           = 8,
+      boot_volume_size = 100
     },
   }
 }
