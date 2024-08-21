@@ -12,16 +12,21 @@ For more information regarding Oracle always-free resources, please refer to the
 
 ## Deployment
 1. Prepare your terraform variables for OCI provider. You can leave rest of the variables on default values.
-2. Deploy infrastructure
+2. Deploy infrastructure:
 ```bash
 terraform init
 terraform plan
 terraform apply
 ```
 3. Terraform will output oci command for creating kubeconfig file.
+4. Access you cluster:
+```bash
+export KUBECONFIG=/path/to/generated/kubeconfig
+kubectl get nodes
+```
 
 ## Cleanup
-To cleanup your infrastructure run
+To cleanup your infrastructure run:
 ```bash
 terraform destroy
 ```
@@ -69,4 +74,4 @@ terraform destroy
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cluster_access_command"></a> [cluster\_access\_command](#output\_cluster\_access\_command) | n/a |
+| <a name="output_cluster_access_command"></a> [cluster\_access\_command](#output\_cluster\_access\_command) | OCI command for creting kubeconfig file |
