@@ -1,10 +1,10 @@
 # Oracle Kubernetes Engine (OKE) Always Free
-Terraform configuration for Oracle Kubernetes Engine (OKE) using always-free resources.
+Terraform configuration for Oracle Kubernetes Engine (OKE) utilizing always-free resources.
 
 ## Acknowledgements
 > :warning: OKE cluster is provisioned with CSI driver and default storage class. Using any PVC claim will result in additional costs outside of always-free resources. By default every persistent volume is provisioned with minimum capacity of 50 GB.
 
-- By default this configuration provisiones 3 worker nodes with 1 OCPUS and 6 GB of memory each. Worker nodes are using VM.Standard.A1.Flex [shape](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-standard).
+- By default this configuration provisiones 2 worker nodes with 2 OCPUS and 8 GB of memory each. You can increase memory up to 12 GB per worker node (total 24GB are free). Worker nodes are using VM.Standard.A1.Flex [shape](https://docs.oracle.com/en-us/iaas/Content/Compute/References/computeshapes.htm#vm-standard).
 
 - You are also able to deploy one Load Balancer for free, for example for kubernetes ingress controller.
 
@@ -68,7 +68,7 @@ terraform destroy
 | <a name="input_user_ocid"></a> [user\_ocid](#input\_user\_ocid) | User OCID | `string` | n/a | yes |
 | <a name="input_user_private_key_fingerprint"></a> [user\_private\_key\_fingerprint](#input\_user\_private\_key\_fingerprint) | Fingerprint of user's key | `string` | n/a | yes |
 | <a name="input_user_private_key_path"></a> [user\_private\_key\_path](#input\_user\_private\_key\_path) | Path to user's private key file | `string` | n/a | yes |
-| <a name="input_worker_pools"></a> [worker\_pools](#input\_worker\_pools) | Worker nodes configuration | `map(any)` | <pre>{<br>  "oke-vm-standard-ol8": {<br>    "description": "OKE-managed Node Pool with OKE Oracle Linux 8 image",<br>    "memory": 6,<br>    "ocpus": 1,<br>    "os": "Oracle Linux",<br>    "os_version": "8",<br>    "shape": "VM.Standard.A1.Flex",<br>    "size": 3<br>  }<br>}</pre> | no |
+| <a name="input_worker_pools"></a> [worker\_pools](#input\_worker\_pools) | Worker nodes configuration | `map(any)` | <pre>{<br>  "oke-vm-standard-ol8": {<br>    "description": "OKE-managed Node Pool with OKE Oracle Linux 8 image",<br>    "memory": 8,<br>    "ocpus": 2,<br>    "os": "Oracle Linux",<br>    "os_version": "8",<br>    "shape": "VM.Standard.A1.Flex",<br>    "size": 2<br>  }<br>}</pre> | no |
 
 ## Outputs
 
